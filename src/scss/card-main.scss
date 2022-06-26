@@ -5,7 +5,7 @@
 
   border-radius: 0.5rem;
 
-  @media screen and (min-width: 70rem) {
+  @media screen and (min-width: $desctop-width) {
     width: 14.22rem;
     height: 28.89rem;
   }
@@ -23,7 +23,7 @@
 
     padding: 1.78rem 1.56rem;
 
-    @media screen and (min-width: 70rem) {
+    @media screen and (min-width: $desctop-width) {
       height: 19.67rem;
       flex-direction: column;
       justify-content: left;
@@ -47,7 +47,7 @@
       display: inline-block;
       margin-left: 1rem;
 
-      @media screen and (min-width: 70rem) {
+      @media screen and (min-width: $desctop-width) {
         margin-left: 0rem;
         margin-top: 2.22rem;
       }
@@ -57,7 +57,7 @@
       }
 
       &-name {
-        @media screen and (min-width: 70rem) {
+        @media screen and (min-width: $desctop-width) {
           font-size: 2rem;
         }
       }
@@ -79,7 +79,7 @@
     height: 4rem;
     width: 100%;
 
-    @media screen and (min-width: 70rem) {
+    @media screen and (min-width: $desctop-width) {
       height: 9.23rem;
     }
 
@@ -88,11 +88,11 @@
       justify-content: space-around;
       flex-direction: row;
 
-      @media screen and (min-width: 70rem) {
+      @media screen and (min-width: $desctop-width) {
         flex-direction: column;
         height: 100%;
         width: fit-content;
-        padding-left: 1rem;;
+        padding-left: 1rem;
       }
 
       &-item {

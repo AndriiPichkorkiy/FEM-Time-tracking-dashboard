@@ -5,9 +5,9 @@ const refs = {
 };
 
 let dataFromBackEnd;
-let cards;
+const cards = {};
 
-getDataFromBackEnd();
+prepareBackEndDataAndCards();
 refs.controlPanel.addEventListener("click", controlPanelHandler);
 
 // === === === === === === === ===
@@ -29,9 +29,7 @@ function controlPanelHandler({ target: button }) {
 }
 
 function switcher(title) {
-  for (const card in Object.keys(cards)) {
-    if (!cards.hasOwnProperty(card)) continue;
-
+  for (const card of Object.keys(cards)) {
     //get data
     const infoData = dataFromBackEnd.find(
       (cardBackEnd) => cardBackEnd.title === card
@@ -41,35 +39,51 @@ function switcher(title) {
     const { current, previous } = infoData.timeframes[title];
 
     //set data
-    cards[card].currentTimeEl.textContent = `${current}hr`;
-    cards[card].previousTimeEl.textContent = `Previous - ${previous}hrs`;
+    cards[card].currentTimeEl.textContent = `${current}${getPostfix(current)}`;
+    cards[card].previousTimeEl.textContent = `${getPrefix(
+      title
+    )}${previous}${getPostfix(title)}
+    `;
   }
 }
+
+function getPrefix(title) {
+  switch (title) {
+    case "daily":
+      return "Yesterday - ";
+
+    case "weekly":
+      return "Last week - ";
+
+    case "monthly":
+      return "Last month - ";
+
+    default:
+      return "Previous period -  ";
+  }
+}
+
+const getPostfix = (hours) => (hours == 1 ? "hr" : "hrs");
 
 // === === === === === === === ===
 // === === === PRELOAD === === ===
 // === === === === === === === ===
 
-async function getDataFromBackEnd() {
+async function prepareBackEndDataAndCards() {
   const url = window.location.href + "data.json";
   const respons = await fetch(url);
   dataFromBackEnd = await respons.json();
-  cards = getCards(dataFromBackEnd);
+  getCards(dataFromBackEnd);
 
   switcher("daily");
 }
 
 function getCards(data) {
-  const cards = {};
-  console.log("data", data);
-
   data.forEach((card) => {
-    console.log("card", card);
     const elCard = document.querySelector(`[data-name='${card.title}']`);
     cards[card.title] = {
       currentTimeEl: elCard.querySelector(".card__body-time-now"),
       previousTimeEl: elCard.querySelector(".card__body-time-before"),
     };
   });
-  return cards;
 }

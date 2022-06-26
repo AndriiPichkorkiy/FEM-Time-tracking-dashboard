@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
+$desctop-width: 82rem;
+
 @import "./reset.scss";
 @import "./colors";
 @import "./card-main.scss";
@@ -22,13 +24,13 @@ body {
 .time-tracking-dashboard {
   width: fit-content;
 
-  @media screen and (min-width: 70rem) {
+  @media screen and (min-width: $desctop-width) {
     display: flex;
   }
 }
 
 .card__list {
-  @media screen and (min-width: 70rem) {
+  @media screen and (min-width: $desctop-width) {
     display: grid;
 
     grid-column-gap: 1rem;

@@ -9,7 +9,7 @@
 
   margin-top: 1.33rem;
 
-  @media screen and (min-width: 70rem) {
+  @media screen and (min-width: $desctop-width) {
     margin-top: 0;
     height: calc(100% - 0.5rem);
   }
@@ -71,7 +71,7 @@
 
     padding: 1.67rem 1.33rem;
 
-    @media screen and (min-width: 70rem) {
+    @media screen and (min-width: $desctop-width) {
       height: 81.6%;
     }
 
@@ -81,12 +81,12 @@
       justify-content: space-between;
       align-items: center;
 
-      @media screen and (min-width: 70rem) {
+      @media screen and (min-width: $desctop-width) {
         margin-bottom: 1rem;
       }
 
       &:last-child {
-        @media screen and (min-width: 70rem) {
+        @media screen and (min-width: $desctop-width) {
           flex-direction: column;
           align-items: flex-start;
           margin-bottom: 0;
@@ -101,13 +101,10 @@
     &-time-now {
       font-size: 2rem;
 
-      @media screen and (min-width: 70rem) {
+      @media screen and (min-width: $desctop-width) {
         font-size: 3rem;
         margin-bottom: 0.5rem;
       }
-    }
-
-    &-time-before {
     }
   }
 }
