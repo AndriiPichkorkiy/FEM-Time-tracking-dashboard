@@ -29,7 +29,7 @@ function controlPanelHandler({ target: button }) {
 }
 
 function switcher(title) {
-  for (const card in cards) {
+  for (const card in Object.keys(cards)) {
     if (!cards.hasOwnProperty(card)) continue;
 
     //get data
@@ -61,7 +61,10 @@ async function getDataFromBackEnd() {
 
 function getCards(data) {
   const cards = {};
+  console.log("data", data);
+
   data.forEach((card) => {
+    console.log("card", card);
     const elCard = document.querySelector(`[data-name='${card.title}']`);
     cards[card.title] = {
       currentTimeEl: elCard.querySelector(".card__body-time-now"),

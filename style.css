@@ -1,0 +1,30 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    --color-bg-main-card: hsl(246, 80%, 60%);
+
+    --color-bg-body:  hsl(226, 43%, 10%);
+    --color-bg-card: hsl(235, 46%, 20%);
+    --color-bg-card-focus: hsl(235, 45%, 61%);
+    --color-text: hsl(236, 100%, 87%);
+
+    --color-bg-card-work: hsl(15, 100%, 70%);
+    --color-bg-card-play: hsl(195, 74%, 62%);
+    --color-bg-card-study: hsl(348, 100%, 68%);
+    --color-bg-card-exercise: hsl(145, 58%, 55%);
+    --color-bg-card-social:  hsl(264, 64%, 52%);
+    --color-bg-card-self-care: hsl(43, 84%, 65%);
+
+    --font-size: 18px;
+}
+
+html {
+    font-size: var(--font-size);
+    font-family: Rubik, sans-serif;
+    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-bg-body);
+    padding: 4.44rem 1.33rem;
+} */
